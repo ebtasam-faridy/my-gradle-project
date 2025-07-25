@@ -1,0 +1,28 @@
+plugins {
+    // Apply the application plugin to add support for building a runnable JAR.
+    id 'application'
+}
+
+repositories {
+    // Use Maven Central for dependencies.
+    mavenCentral()
+}
+
+dependencies { // <--- This is the start of the dependencies block
+    // Use JUnit Jupiter for testing.
+    testImplementation(platform('org.junit:junit-bom:5.10.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+
+    // This is the dependency we will change to observe cache behavior
+    implementation 'com.google.guava:guava:31.0.1-jre' // <-- This line belongs here!
+} // <--- This is the end of the dependencies block
+
+// Define the main class for the application.
+application {
+    mainClass = 'my.gradle.project.App' // Replace with your actual main class if different
+}
+
+tasks.named('test') {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}
