@@ -14,7 +14,7 @@ dependencies { // <--- This is the start of the dependencies block
     testImplementation('org.junit.jupiter:junit-jupiter')
 
     // This is the dependency we will change to observe cache behavior
-    implementation 'com.google.guava:guava:28.0-jre' // <-- This line belongs here!
+    implementation 'com.google.guava:guava:31.0.1-jre' // <-- This line belongs here!
 } // <--- This is the end of the dependencies block
 
 // Define the main class for the application.
